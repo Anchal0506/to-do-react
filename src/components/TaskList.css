@@ -1,0 +1,62 @@
+/* TaskList.css */
+
+/* Styling for completed tasks */
+.completed {
+  text-decoration: line-through; /* Add strikethrough for completed tasks */
+}
+
+/* Animation styles for task list items */
+.task-enter {
+  opacity: 0;
+  transform: translateY(-20px); /* Initial position for enter animation */
+}
+
+.task-enter-active {
+  opacity: 1;
+  transform: translateY(0); /* Final position for enter animation */
+  transition: opacity 0.5s, transform 0.5s; /* Transition properties */
+}
+
+.task-exit {
+  opacity: 1;
+  transform: translateY(0); /* Initial position for exit animation */
+}
+
+.task-exit-active {
+  opacity: 0;
+  transform: translateY(-20px); /* Final position for exit animation */
+  transition: opacity 0.5s, transform 0.5s; /* Transition properties */
+}
+/* Container styles */
+.task-list-container {
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+/* Task item styles */
+.task-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.task-item.completed {
+  opacity: 0.6; /* Reduce opacity for completed tasks */
+}
+
+.task-text {
+  flex-grow: 1; /* Allow text to grow to fill remaining space */
+  margin-right: 10px; /* Add margin between text and actions */
+}
+
+.delete-button {
+  color: #e74c3c; /* Set color for delete button */
+}
