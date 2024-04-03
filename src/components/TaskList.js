@@ -21,7 +21,7 @@ function TaskList() {
   return (
     <Grid container spacing={2} justifyContent="center">
       <Grid item xs={12} sm={8}>
-        <List className="task-list-container">
+        {tasks.length>0?<List className="task-list-container">
           <AnimatePresence>
             {tasks.map(task => (
               <motion.li
@@ -38,7 +38,7 @@ function TaskList() {
                     onChange={() => handleToggle(task.id)}
                   />
                   <ListItemText primary={task.text} className="task-text" />
-                  <ListItemSecondaryAction>
+                  <ListItemSecondaryAction sx={{marginRight: "auto"}}>
                     <IconButton edge="end" aria-label="delete" onClick={() => handleDelete(task.id)} className="delete-button">
                       <DeleteIcon />
                     </IconButton>
@@ -47,7 +47,10 @@ function TaskList() {
               </motion.li>
             ))}
           </AnimatePresence>
-        </List>
+        </List>:<div className='task-list-container'>
+              Please Enter the task
+          </div>}
+        
       </Grid>
     </Grid>
   );

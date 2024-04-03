@@ -20,7 +20,7 @@ function TaskInput() {
   };
 
   return (
-    <Grid container spacing={2} justifyContent="center">
+    <Grid container spacing={2} justifyContent="center" sx={{marginBottom:"2rem", width:"100%"}}>
       <Grid item xs={12} sm={8}>
         <TextField
           fullWidth
@@ -28,6 +28,7 @@ function TaskInput() {
           variant="outlined"
           value={taskText}
           onChange={handleChange}
+          sx={{backgroundColor: "white"}}
         />
       </Grid>
       <Grid item xs={12} sm={4}>
